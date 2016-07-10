@@ -2,7 +2,8 @@ FROM debian:jessie
 RUN apt-get update && apt-get install -y git \
                        make \
                        build-essential \
-                       autoconf
+                       autoconf \
+                       libtool
 
 RUN apt-get update && apt-get install -y perl pwgen --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
