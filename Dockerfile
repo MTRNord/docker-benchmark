@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y git \
                        build-essential \
                        autoconf \
                        libtool \
-                       lib32z1-dev
+                       lib32z1-dev \
+                       dbus-core
 
 RUN apt-get update && apt-get install -y perl pwgen --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
