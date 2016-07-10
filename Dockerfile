@@ -3,7 +3,8 @@ RUN apt-get update && apt-get install -y git \
                        make \
                        build-essential \
                        autoconf \
-                       libtool
+                       libtool \
+                       lib32z1-dev
 
 RUN apt-get update && apt-get install -y perl pwgen --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
