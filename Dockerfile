@@ -31,4 +31,5 @@ RUN { \
 	&& chmod 777 /var/run/mysqld
 	
 RUN git clone https://github.com/akopytov/sysbench.git && cd sysbench && ./autogen.sh && ./configure && make && make install
+RUN mkdir -p /root/shared/results/ && touch /root/shared/results/benchmark.txt
 #CMD ["/bin/bash", "sysbench --debug > /root/shared/results/benchmark.txt"]
