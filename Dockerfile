@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y git \
                        autoconf \
                        libtool \
                        lib32z1-dev \
-                       dbus-core
+                       dbus
 
 RUN apt-get update && apt-get install -y perl pwgen --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
@@ -33,4 +33,5 @@ RUN { \
 	
 RUN git clone https://github.com/akopytov/sysbench.git && cd sysbench && ./autogen.sh && ./configure && make && make install
 RUN mkdir -p /root/shared/results/ && touch /root/shared/results/benchmark.txt
+RUN service dbus start
 #CMD ["/bin/bash", "sysbench --debug > /root/shared/results/benchmark.txt"]
